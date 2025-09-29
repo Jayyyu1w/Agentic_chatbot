@@ -6,6 +6,9 @@ from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 
 class SearchTool:
+    """
+    搜尋工具，提供Tavily與duckduckgo搜尋
+    """
     def __init__(self, search_engine=Literal["tavily", "duckduckgo"], search_results=5):
         if search_engine == "tavily":
             if not os.environ.get("TAVILY_API_KEY"):
